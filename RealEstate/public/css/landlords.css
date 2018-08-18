@@ -8,11 +8,13 @@
  }
 
  form {
- 	width: 50%;
- 	padding: 20px;
+ 	width: 30%;
+ 	padding: 10px;
  	border: 1px solid black;
- 	border-radius: 10px;
- 	margin-left: 25%;
+ 	border-radius: 5px;
+ 	margin-left: 35%;
+ 	padding-top: 30px;
+ 	background-color: black;
  }
 
  input {
@@ -22,8 +24,7 @@
  	color: default;
  	border-radius: 5px;
  	border: 1px solid green;
- 	width: 90%;
- 	margin-left: 5%;
+ 	width: 95%;
  	margin-bottom: 10px;
  }
 
@@ -38,15 +39,20 @@
 
  button {
  	color: white;
- 	border: 1px solid orange;
+ 	border: none;
  	background-color: green;
- 	font-size: 20px;
+ 	font-size: 16px;
  	padding-left: 20px;
  	padding-right: 20px;
  	padding-top: 3px;
  	padding-bottom: 3px;
  	border-radius: 5px;
  	margin-left: 4.5%;
+ }
+
+ button:hover {
+ 	background-color: lightgreen;
+ 	color: black;
  }
 
  .nav {

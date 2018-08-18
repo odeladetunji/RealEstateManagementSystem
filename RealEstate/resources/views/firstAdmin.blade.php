@@ -18,11 +18,11 @@
     </head>
     <body>
         
-              <div>
-                   <button>AdminPage</button>
+              <div class="header">
+                   <button onclick="gotoHomePage()">home</button>
               </div>
               <div class="linkDiv">
-                  <h1>Please Select Your Category</h1><br>
+                  <h2>Please Select Your Category</h2><br>
               </div>
               <div>
                   <button id="firstbutton"><a href="/landlords">LandLords</a></button>
@@ -31,6 +31,9 @@
                 <button id="secondbutton"><a href="/estateManagers" id="secondlink">Estate Managers</a></button>
               </div>
         <script>    
+                function gotoHomePage(){
+                     redirect();
+                }
         </script>
     </body>
 </html>

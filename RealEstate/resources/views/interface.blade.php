@@ -18,7 +18,7 @@
     </head>
     <body>
           <div class="nav">
-               <button><a href="/landingPage"></a></button>
+               <button>home</button>
           </div>
           <div>
               <div class="continueButton">

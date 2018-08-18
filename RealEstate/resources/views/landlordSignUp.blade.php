@@ -24,9 +24,8 @@
               <h1>LandLords</h1>
               <p id="warningMessage">This Password is not Available</p>
               <form class="landLords">
-                   <label for="">Sign Up</label><br>
-                   <input type="text" required id="username"><br>
-                   <input type="password" required id="password"><br>
+                   <input type="text" required id="username" placeholder="Enter username"><br>
+                   <input type="password" required id="password" placeholder="Enter password"><br>
                    <button>submit</button>
               </form>
 

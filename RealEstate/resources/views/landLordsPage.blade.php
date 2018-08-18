@@ -186,47 +186,52 @@
                     data = JSON.parse(this.responseText).data; // this is an array!
                     console.log(data);
 
-                    function useData(param){
-                        var theHeading = "<div>"
+                    function useData(param, count){
+                        var theHeading = "<div class='headerDis'>"
                                                 "<ul>"
-                                                    "<li>" + param"</li>"
+                                                    "<li>" + count + "</li>" +
+                                                    "<li>" + param.discription + "</li>" +
+                                                    "<li><button>delete</button><li>"
                                                 "</ul>"
                                          "</div>";
 
                         var someHtml = "<div>" +
-                                            "<p>Property Discription</p>" +
-                                            "<p>" +  param.discription + "</p>" +
-                                            "<p>Caption</p>" +
-                                            "<p>" + param.caption + "</p>" +
-                                            "<p>Owners Name</p>" +
-                                            "<p>" + param.owner +  "</p>"
-                                            "<p>Address Of Property</p>" +
-                                            "<p>" + param.address + "</p>" +
-                                            "<p>State of Property location</p>" +
-                                            "<p>" + param.location + "</p>" +
-                                            "<p>Local Government of Property Location</p>" +
-                                            "<p>" + param.localgovernment + "</p>" +
-                                            "<p>Condition of Property</p>" +
-                                            "<p>" + param.condition + "</p>" +
-                                            "<p>Availability Status</p>" +
-                                            "<p>" + param.availability + "</p>" +
-                                            "<p>Type of Listing</p>" +
-                                            "<p>" + param.type + "</p>" +
-                                            "<p>Telephone</p>" +
-                                            "<p>" + param.telephone + "</p>" +
-                                            "<p>Type of Property</p>" +
-                                            "<p>" + param.type + "</p>" +
-                                            "<p>Telephony</p>" +
-                                            "<p>" + param.telephone"</p>" +
-                                            "<p>Price</p>" +
-                                            "<p>" + param.price + "</p>" +
+                                            "<p class='pHead'>Property Discription</p>" +
+                                            "<p class='subDiv'>"  + param.discription + "</p>" +
+                                            "<p class='pHead'>Caption</p>" +
+                                            "<p class='subDiv'>"  + param.caption + "</p>" +
+                                            "<p class='pHead'>Owners Name</p>" +
+                                            "<p class='subDiv'>"  + param.owner +  "</p>"
+                                            "<p class='pHead'>State of Property location</p>" +
+                                            "<p class='subDiv'>" + param.state + "</p>" +
+                                            "<p class='pHead'>Local Government of Property Location</p>" +
+                                            "<p class='subDiv'>" + param.localgovernment + "</p>" +
+                                            "<p class='pHead'>Condition of Property</p>" +
+                                            "<p class='subDiv'>" + param.thecondition + "</p>" +
+                                            "<p class='pHead'>Availability Status</p>" +
+                                            "<p class='subDiv'>" + param.availability + "</p>" +
+                                            "<p class='pHead'>Type of Listing</p>" +
+                                            "<p class='subDiv'>" + param.type + "</p>" +
+                                            "<p class='pHead'>Telephone</p>" +
+                                            "<p class='subDiv'>" + param.phonenumber + "</p>" +
+                                            "<p class='pHead'>Type of Property</p>" +
+                                            "<p class='subDiv'>" + param.type + "</p>" +
+                                            "<p class='pHead'>Price</p>" +
+                                            "<p class='subDiv'>" + param.price + "</p>" +
                                        "</div>";
 
-                         var finalHTML = "<div></div>";
+                         var finalHTML = "<div>" + theHeading + someHtml + "</div>";
+
+                         $(finalHTML).insertBefore('#pTag');
                     }
-       
+                    
+                    var count = 0;
                     for(var i=0; i<=data.length; i++){
-                        useData(data[i]); //note data[i] is an object literial
+                        count++;
+                        useData(data[i], count); //note data[i] is an object literial
+                        if (count == data.length) {
+                            break;
+                        }
                     }
                 }
             };

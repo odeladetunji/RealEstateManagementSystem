@@ -37,6 +37,7 @@ Route::post('/registerLandLord', 'RegisterLandLordController@register');
 Route::post('/registerEstateManager', 'RegisterEstateManagerController@register');
 Route::post('/checkIfPasswordAvailable', 'PasswordAvailabilityController@password');
 Route::get('/landingpage', 'LandingPageController@landingpage');
+Route::get('/listAllProperties', 'ListAllPropertiesUsingGetController@listAllProperties');
 Route::get('/registrationInterface', 'RegistrationInterfaceController@interface');
 Route::get('/returnInterfacePage', ['as'=>'theInterface', function(){
 	return view('interface');

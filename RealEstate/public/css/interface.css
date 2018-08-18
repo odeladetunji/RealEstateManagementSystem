@@ -1,0 +1,50 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    background-color: #fafafa;
+    border: border-box;
+}
+
+.continueButton {
+	margin-top: 200px;
+	width: 100%;
+}
+
+.continueButton button {
+	border: none;
+	border-radius: 5px;
+	padding: 30px 50px;
+	color: white;
+	background-color: green;
+	margin-left: 85%;
+}
+
+.continueButton button:hover {
+	background-color: lightgreen;
+	color: black;
+	border: 1px solid orange;
+}
+
+form {
+	width: 50%;
+}
+
+.nav button {
+	background-color: green;
+	color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    float: right;
+    margin-right: 20px;
+    padding: 5px 15px;
+
+}
+
+.nav {
+	width: 99.2%;
+	height: 40px;
+	background-color: black;
+    padding: 5px;
+
+}

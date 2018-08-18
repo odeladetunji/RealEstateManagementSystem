@@ -1,26 +1,26 @@
 * {
 	margin: 0px;
 	padding: 0px;
-	background-color: black;
+	background-color: #fafafa;
 	font-family: vadana;
 	border: box-border;
  }
 
  a {
  	text-decoration: none;
- 	background-color: grey;
- 	color: black;
- 	font-size: 24px;
+ 	background-color: green;
+ 	color: white;
+ 	font-size: 15px;
  }
 
  #firstbutton {
  	padding: 20px;
  	padding-left: 50px;
  	padding-right: 50px;
- 	margin-left: 41%;
- 	background-color: grey;
+ 	margin-left: 43%;
+ 	background-color: green;
  	color: black;
- 	border: 1px solid orange;
+ 	border: none;
  	border-radius: 10px;
  }
 
@@ -28,10 +28,10 @@
  	padding: 20px;
  	padding-left: 50px;
  	padding-right: 50px;
- 	margin-left: 40%;
- 	background-color: grey;
+ 	margin-left: 42%;
+ 	background-color: green;
  	color: black;
- 	border: 1px solid orange;
+ 	border: none;
  	border-radius: 10px;
  	margin-top: 50px;
  }
@@ -44,6 +44,32 @@ a {
  	width: 100%;
  }
 
+ .header {
+ 	padding-top: 10px;
+ 	background-color: black;
+ 	width: 100%;
+ 	height: 40px;
+ }
+
+ .header button {
+ 	padding-left: 20px;
+ 	padding-right: 20px;
+ 	padding-top: 5px; 
+ 	padding-bottom: 5px;
+ 	background-color: green;
+ 	color: white;
+ 	float: right;
+ 	margin-right: 10px;
+ 	float: clear-both;
+ 	border: none;
+ 	border-radius: 5px;
+ 	font-size: 17px;
+ }
+
+.header button:hover {
+	background-color: lightgreen;
+	color: black;
+}
  .linkDiv {
  	margin-top: 100px;
  	width: 100%;
@@ -55,5 +81,12 @@ a {
 
  a:hover {
  	text-decoration: underline;
+ }
+
+ h2 {
+ 	text-align: center;
+ 	padding-bottom: 40px;
+ 	color: purple;
+
  }
 
