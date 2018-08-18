@@ -13,8 +13,7 @@ class ListAllPropertiesController extends BaseController
    
 public function listAllProperties(Request $request)
     {
-    	 $identity = $request->input('message');
-  
+    	 $identity = $request->message;
     	 $properties = DB::select('select * from properties where identity = ?', [$identity]);
          return response()->json(Array('data'=> $properties), 200);
     }

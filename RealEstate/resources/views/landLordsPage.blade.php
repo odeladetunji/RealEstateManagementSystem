@@ -55,6 +55,8 @@
                         {{ csrf_field() }}
                         <label>Discription of Property</label>
                         <input type="text" name="discription" placeholder="Discription of Property"><br>
+                        <label>Caption</label>
+                        <input type="text" name="caption" placeholder="E.g two bedroom apartment"><br>
                         <label>Owners Name</label>
                         <input type="text" name="owner" placeholder="Owners Name"><br>
                         <label>Address of Property</label>
@@ -84,7 +86,7 @@
                         <label>Second Picture</label>
                         <input type="file" name="secondpicture" placeholder="Picture of Property"><br>
                         <label>Third Picture</label>
-                        <input type="file" name="thirdpicure" placeholder="Picture of Property"><br>
+                        <input type="file" name="thirdpicture" placeholder="Picture of Property"><br>
                         <label>Fouth Picture</label>
                         <input type="file" name="fouthpicture" placeholder="Picture of Property"><br>
                         <button>submit</button>
@@ -99,9 +101,10 @@
                     var property = document.querySelector('form');
                     function checkingIfPasswordExits(){
                         //var propertyForm = document.getElementsByClassName('listProperties')[0];
+                        var thisPerson = document.getElementById('thisIdentity').innerHTML;
                         var property = document.querySelector('form');
                         var formData = new FormData(property);
-                        formData.append('user', 'username');
+                        formData.append('identity', thisPerson);
                         //console.log(formData.get('location')); // you wo
                         //return;
                         var theToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -140,8 +143,8 @@
                     checkingIfPasswordExits();
 
                  
-    var data = new FormData(property);
-    $.ajax({
+    //var data = new FormData(property);
+    /*$.ajax({
         url: 'http://127.0.0.1:8000/listPropertyLandLord',
         type: 'POST',
         data: data,
@@ -154,7 +157,7 @@
         error: function (jqXHR, textStatus, errorThrown) {
             console.log(jqXHR, textStatus, errorThrown);
         }
-    })
+    })*/
 
              
               }) 
@@ -174,13 +177,57 @@
         function listProperties(){
             var theToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
             var message = document.getElementById('thisIdentity').innerHTML;
+            
             var theData = { "message": message, "token": theToken }
             var xhttp = new XMLHttpRequest();
             xhttp.open("POST", "/listAllProperties", true);
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    data = this.responseText;
-                    console.log(this.responseText);
+                    data = JSON.parse(this.responseText).data; // this is an array!
+                    console.log(data);
+
+                    function useData(param){
+                        var theHeading = "<div>"
+                                                "<ul>"
+                                                    "<li>" + param"</li>"
+                                                "</ul>"
+                                         "</div>";
+
+                        var someHtml = "<div>" +
+                                            "<p>Property Discription</p>" +
+                                            "<p>" +  param.discription + "</p>" +
+                                            "<p>Caption</p>" +
+                                            "<p>" + param.caption + "</p>" +
+                                            "<p>Owners Name</p>" +
+                                            "<p>" + param.owner +  "</p>"
+                                            "<p>Address Of Property</p>" +
+                                            "<p>" + param.address + "</p>" +
+                                            "<p>State of Property location</p>" +
+                                            "<p>" + param.location + "</p>" +
+                                            "<p>Local Government of Property Location</p>" +
+                                            "<p>" + param.localgovernment + "</p>" +
+                                            "<p>Condition of Property</p>" +
+                                            "<p>" + param.condition + "</p>" +
+                                            "<p>Availability Status</p>" +
+                                            "<p>" + param.availability + "</p>" +
+                                            "<p>Type of Listing</p>" +
+                                            "<p>" + param.type + "</p>" +
+                                            "<p>Telephone</p>" +
+                                            "<p>" + param.telephone + "</p>" +
+                                            "<p>Type of Property</p>" +
+                                            "<p>" + param.type + "</p>" +
+                                            "<p>Telephony</p>" +
+                                            "<p>" + param.telephone"</p>" +
+                                            "<p>Price</p>" +
+                                            "<p>" + param.price + "</p>" +
+                                       "</div>";
+
+                         var finalHTML = "<div></div>";
+                    }
+       
+                    for(var i=0; i<=data.length; i++){
+                        useData(data[i]); //note data[i] is an object literial
+                    }
                 }
             };
 
@@ -188,8 +235,8 @@
             xhttp.setRequestHeader("X-Requested-With", 'XMLHttpRequest');
             xhttp.setRequestHeader("processData", 'false');
             xhttp.setRequestHeader('cache', 'false');
-            xhttp.setRequestHeader("ContentType", "false");
-            xhttp.send(theData);
+            xhttp.setRequestHeader("Content-Type", "application/json");
+            xhttp.send(JSON.stringify(theData));
         }
 
         listProperties();

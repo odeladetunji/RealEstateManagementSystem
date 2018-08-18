@@ -24,10 +24,10 @@ public function property(Request $request)
          $discription = $request->discription;
          $owner = $request->owner;
          $price = $request->price;
-         $identity = $request->user;
-         $phoneNumber = $request->phone;
+         $identity = $request->identity;
+         $phoneNumber = $request->telephone;
          $availability = $request->availability;
-         $userIdentity = $request->user;
+         $userIdentity = $request->identity;
          
          $picture0 = $request->firstpicture->getClientOriginalName();
          $picture1 = $request->secondpicture->getClientOriginalName();
