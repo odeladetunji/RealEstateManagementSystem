@@ -1,0 +1,59 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	background-color: black;
+	font-family: vadana;
+	border: box-border;
+ }
+
+ a {
+ 	text-decoration: none;
+ 	background-color: grey;
+ 	color: black;
+ 	font-size: 24px;
+ }
+
+ #firstbutton {
+ 	padding: 20px;
+ 	padding-left: 50px;
+ 	padding-right: 50px;
+ 	margin-left: 41%;
+ 	background-color: grey;
+ 	color: black;
+ 	border: 1px solid orange;
+ 	border-radius: 10px;
+ }
+
+ #secondbutton {
+ 	padding: 20px;
+ 	padding-left: 50px;
+ 	padding-right: 50px;
+ 	margin-left: 40%;
+ 	background-color: grey;
+ 	color: black;
+ 	border: 1px solid orange;
+ 	border-radius: 10px;
+ 	margin-top: 50px;
+ }
+
+a {
+	background-color: none;
+}
+
+ div {
+ 	width: 100%;
+ }
+
+ .linkDiv {
+ 	margin-top: 100px;
+ 	width: 100%;
+ }
+
+ #secondlink {
+ 	margin-top: 300px;
+ }
+
+ a:hover {
+ 	text-decoration: underline;
+ }
+

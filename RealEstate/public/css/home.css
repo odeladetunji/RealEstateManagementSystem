@@ -1,0 +1,198 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	background-color: white;
+	font-family: vadana;
+	border: box-border;
+ }
+
+ .allPlayers {
+ 	display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    padding-left: 5%;
+ }
+
+ .feuturedPlayers {
+ 	width: 100%;
+ 	background-color: black;
+ 	padding-top: 30px;
+ 	padding-bottom: 30px;
+ 	overflow: hidden;
+ }
+
+ .feuturedPlayers ul {
+ 	position: relative;
+ }
+
+ .feuturedPlayers ul li {
+ 	display: inline;
+    width: 20%;
+ }
+
+ .eachElement1 {
+ 	
+ }
+
+ #topHeading {
+    background-color: black;
+    padding-top: 20px;
+ }
+
+ #topHeading h1 {
+ 	background-color: black;
+ 	color: white;
+ 	margin-left: 40%;
+ }
+
+ .recentPlayers {
+ 	padding-top: 30px;
+ 	padding-bottom: 30px;
+ }
+
+ .recentPlayers h1 {
+ 	color: green;
+ 	margin-left: 40%;
+ }
+
+ .eachElement{
+ 	width: 230px;
+ 	height: 190px;
+ 	margin-left: 5%;
+ 	margin-bottom: 30px;
+ 	border: 1px solid red;
+ }
+
+ 
+
+ img {
+ 	width: 100%;
+ }
+
+ p {
+   background-color: transparent;
+   color: white;
+ }
+ .termsAndCondition ul li {
+	list-style-type: none;
+	padding: 10px;
+	display: inline;
+	padding-top: 10px;
+	background-color: black;
+	color: white;
+}
+
+.termsAndCondition ul {
+	   float: right;
+	   background-color: black;
+}
+
+.copyRight p {
+	color: default;
+    padding: 10px;
+    background-color: black;
+}
+
+.copyRight, .termsAndCondition {
+	width: 50%;
+	background-color: black;
+}
+
+.footer {
+   width: 100%;
+   padding-top: 30px;
+   padding-bottom: 10px;
+   background-color: black;
+}
+
+#lastP {
+	color: white;
+	float: right;
+	background-color: black;
+	width: 100%;
+	text-align: right;
+	padding-right: 10px;
+	padding-bottom: 20px;
+}
+
+.moreClubs {
+	width: 100%;
+	padding-top: 30px;
+	padding-bottom: 10px;
+	background-color: black;
+}
+
+.moreClubs button {
+	margin-left: 45%;
+	color: white;
+	border-radius: 15px;
+	background-color: green;
+	border: none;
+	padding: 10px;
+}
+
+.subSecondClass {
+	width: 50%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#firstInput {
+	width: 54%;
+	margin-left: 15%;
+	padding: 8px;
+	background-color: white;
+	margin-bottom: 15px;
+}
+
+.firstInputSection, .secondInputSection {
+   margin-left: 15%;
+}
+.firstInputSection input, .secondInputSection input {
+	width: 85%;
+	padding: 8px;
+	background-color: white;
+	margin-bottom: 15px;
+}
+
+#location, #playingPosition {
+     margin-left: 8%;
+}
+
+.headerForm button {
+	padding: 7px;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: white;
+	border-radius: 10px;
+	background-color: green;
+	border: none;
+	margin-left: 15%;
+}
+
+.headerForm label {
+	font-size: 20px;
+	color: grey;
+	background-color: transparent;
+	padding: 10px;
+	margin-left: 13%;
+	margin-bottom: 30px;
+}
+
+.subSecondClass p {
+	color: black;
+	background-color: transparent;
+}
+
+.subSecondClass p, .subSecondClass h2{
+   padding-left: 10%;
+}
+
+.firstHeaderTab ul li {
+	color: black;
+	list-style-type: none;
+	padding: 10px;
+	padding-top: 20px;
+	background-color: transparent;
+	display: inline;
+}

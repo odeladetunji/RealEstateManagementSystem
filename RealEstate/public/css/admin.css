@@ -1,0 +1,159 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	background-color: white;
+	font-family: vadana;
+	border: box-border;
+ }
+
+ .headerDiv ul li {
+ 	list-style-type: none;
+ 	color: black;
+ 	display: inline;
+ 	padding: 10px;
+ }
+
+ .headerDiv ul {
+     padding-top: 20px;
+     margin-left: 70%;
+ }
+
+ .headerDiv h1 {
+ 	text-align: center;
+ 	padding-top: 40px;
+ 	padding-bottom: 60px;
+ }
+
+.headerDiv {
+	width: 100%;
+	overflow: left;
+}
+
+.theBody {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.bodySection {
+   width: 80%;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+	background-color: black;
+}
+
+.leftNavigation {
+	background-color: black;
+	cursor: pointer;
+	width: 20%;
+}
+
+.leftNavigation ul li{
+    list-style-type: none;
+    display: block;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    padding-left: 20px;
+}
+
+.leftNavigation ul {
+   background-color: black;
+}
+
+.leftNavigation ul li:nth-child(1) {
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.leftNavigation p {
+	font-weight: bold;
+	color: white;
+	margin-bottom: 15px;
+	background-color: black;
+}
+
+.numberOfPlayers {
+	border: none;
+	border-radius: 7px;
+	width: 30%;
+	background-color: #fafafa;
+	margin-left: 15%;
+}
+.numberOfClubs {
+	border: none;
+	border-radius: 7px;
+	width: 30%;
+	margin-left: 10%;
+	background-color: #fafafa;
+}
+
+.numberOfClubs p, .numberOfPlayers p {
+	text-align: center;
+	margin: auto;
+	font-size: 25px;
+	font-weight: bold;
+	color: #110033;
+	background-color: #fafafa;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	border-radius: 10px;
+}
+
+.allPlayers {
+    border: none;
+	border-radius: 7px;
+	width: 30%;
+	margin-left: 10%;
+	background-color: #fafafa;
+	margin-top: 30px;
+	margin-left: 15%;
+}
+
+.allClubs {
+    border: none;
+	border-radius: 7px;
+	width: 30%;
+	margin-left: 10%;
+	background-color: #fafafa;
+	margin-top: 30px;
+}
+
+.allClubs p, .allPlayers p {
+	text-align: center;
+	background-color: #fafafa;
+	border-radius: 7px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.termsAndCondition ul li {
+	list-style-type: none;
+	padding: 10px;
+	display: inline;
+	padding-top: 10px;
+}
+
+.termsAndCondition ul {
+	   float: right;
+}
+
+.copyRight p {
+    padding: 10px;
+}
+
+.copyRight, .termsAndCondition {
+	width: 50%;
+}
+
+.footer {
+   width: 100%;
+   padding-top: 15px;
+}
+
+
+

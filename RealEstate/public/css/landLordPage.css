@@ -1,0 +1,296 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	background-color: #eeeeee;
+	font-family: vadana;
+	border: box-border;
+	margin-left: 0px;
+	margin-right: 0px;
+ }
+
+ .row {
+ 	margin-left: 0px;
+	margin-right: 0px;
+ }
+
+.firstclass {
+	background-color: black;
+	color: white;
+    width: 20%;
+    position: fixed;
+    border-right: 4px solid orange;
+}
+.secondclass{
+    margin-left: 20%;
+    padding-left: 0px;
+}
+
+
+.firstclass ul {
+	background-color: black;
+	padding-bottom: 170px;
+}
+
+.firstclass ul li:nth-child(3) {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.firstclass ul li {
+	border: 2px solid white;
+	text-align: center;
+	border-radius: 50%;
+	background-color: green;
+	margin-bottom: 5px;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	width: 50%;
+	margin-left: 25%;
+	list-style-type: none;
+	cursor: pointer;
+}
+
+.firstclass ul li:nth-child(4) {
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
+
+.firstclass ul li:nth-child(5) {
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
+
+.firstclass ul li:hover {
+	border: 2px solid orange;
+}
+
+.firstclass ul li:nth-child(1) {
+	margin-top: 20px;
+}
+
+.secondclass {
+    width: 80%;
+}
+ input {
+ 	padding: 10px;
+ 	margin-top: 2px;
+ 	margin-bottom: 10px;
+ 	margin-left: 30px;
+ 	width: 90%;
+ 	border: none;
+ 	border-radius: 5px;
+ 	background-color: #eeeeee;
+ 	color: black;
+ 	font-size: 18px;
+ }
+
+ label {
+ 	margin-bottom: 0px;
+ 	margin-left: 30px;
+ 	background-color: white;
+ }
+ select {
+ 	padding: 10px;
+ 	margin-top: 10px;
+ 	margin-left: 3.5%;
+ 	width: 91.8%;
+ 	border: none;
+ 	border-radius: 5px;
+ 	background-color: lightgreen;
+ 	color: black;
+ 	font-size: 18px;
+
+ }
+
+ form {
+ 	width: 80%;
+ 	padding: 20px;
+ 	padding-top: 40px;
+ 	
+ 	margin-left: 5%;
+ 	border-radius: 10px;
+ 	background-color: white;
+
+ 	/*display: none;*/
+ }
+
+ h4 {
+ 	margin-top: 100px;
+ 	text-align: center;
+ 	margin-bottom: 10px;
+ 	background-color: white;
+ 	padding: 10px;
+ 	color: black;
+ 	width: 82%;
+ 	margin-left: 5%;
+    border: none;
+ }
+
+ #subHeading {
+ 	width: 100%;
+ 	background-color: black;
+ 	color: orange;
+ 	text-align: center;
+ 	font-size: 20px;
+ 	padding-top: 20px;
+ 	padding-bottom: 20px;
+ 	margin-bottom: 30px;
+ 	position: fixed;
+ }
+ button {
+ 	color: white;
+ 	background-color: green;
+ 	font-size: 18px;
+ 	border: none;
+ 	border-radius: 5px;
+ 	padding-top: 5px;
+ 	padding-bottom: 5px;
+ 	padding-left: 10px;
+ 	padding-right: 10px;
+ 	margin-left: 30px;
+ }
+
+ #successMessage {
+    display: none;
+ }
+
+ .dashBoard {
+ 	width: 100% !important;
+ 	margin-top: 100px;
+ 	background-color: yellow;
+ 	width: 100%;
+ }
+
+.tabs {
+	margin-top: 150px;
+	width: 100%;
+}
+
+.tabs li {
+	width: 25%;
+	background-color: green;
+	margin-left: 5%;
+	display: inline-block !important;
+    list-style-type: none;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid green;
+}
+
+.tabs li:hover {
+	border: 2px solid orange;
+}
+
+.tabs li p {
+	background-color: green;
+	text-align: center;
+	color: white;
+	font-size: 19px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.tabs li p:nth-child(1) {
+	background-color: green;
+	padding-top: 40px;
+	text-align: center;
+	color: white;
+	font-size: 19px;
+}
+
+.tabs li p:nth-child(2) { 
+    margin-bottom: 40px;
+}
+
+.secondTab li {
+	width: 25%;
+	list-style-type: none;
+	display: inline-block;
+	background-color: green;
+	color: white;
+	border: 2px solid green;
+	cursor: pointer;
+    border-radius: 5px;
+    margin-left: 5%;
+}
+
+.secondTab li p {
+    background-color: green;
+    text-align: center;
+}
+
+.secondTab li p:nth-child(1){
+    padding-top: 40px;
+}
+
+.secondTab {
+	margin-top: 60px;
+}
+.secondTab li p:nth-child(2){
+    padding-bottom: 40px;
+}
+
+.secondTab li:hover {
+	border: 2px solid orange;
+}
+
+.ForListedProperties {
+	width: 100%;
+}
+
+.ForListedProperties ul li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+.ForListedProperties ul li:nth-child(1) {
+    width: 10%;
+    border-right: 1px solid white;
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+.ForListedProperties ul li:nth-child(2) {
+	border-right: 1px solid white;
+    width: 70%;
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+.ForListedProperties ul li:nth-child(3) {
+    width: 20%;
+}
+
+.ForListedProperties ul {
+   width: 100%;
+}
+
+
+.deleteButton {
+	margin-left: 0px;
+}
+
+.subHead {
+	margin-left: 5%;
+	width: 90%;
+	margin-bottom: 0px;
+	font-weight: bold;
+	color: purple;
+}
+
+.propertyDis {
+	border-bottom: 1px solid white;
+	width: 90%;
+	margin-left: 5%;
+}
+
+.discriptionCover {
+	border: 1px solid white;
+	margin-bottom: 10px;
+	width: 85%;
+	margin-left: 5%;
+}
+
+
