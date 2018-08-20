@@ -178,6 +178,43 @@
             $('#thisH4').show();
         }
 
+        function deleteDisProperty(param){
+            var theToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            var theData = { "message": param, "token": theToken }
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "/deleteProperty", true);
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                    return;
+                    data = JSON.parse(this.responseText).data;
+                    console.log(this.responseText);
+                }
+            };
+
+            xhttp.setRequestHeader('X-CSRF-TOKEN', theToken);
+            xhttp.setRequestHeader("X-Requested-With", 'XMLHttpRequest');
+            xhttp.setRequestHeader("processData", 'false');
+            xhttp.setRequestHeader('cache', 'false');
+            xhttp.setRequestHeader("Content-Type", "application/json");
+            xhttp.send(JSON.stringify(theData));
+        }
+
+        function hideOrDisplayProperty(param){
+           var someValue = param.getAttribute('class');
+
+           // this function is for toggling between hide or display of properties
+           var thisProperty = document.getElementById(someValue);
+           var value = thisProperty.style.display;
+    
+           if (value == 'none') {
+               thisProperty.style.display = 'block';
+           }else{
+               thisProperty.style.display = 'none';
+           }
+           
+        }
+
         function listProperties(){
             var theToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
             var message = document.getElementById('thisIdentity').innerHTML;
@@ -191,21 +228,22 @@
                     console.log(data);
 
                     function useData(param, count){
-                        var theHeading = "<div class='headerDis'>"
-                                                "<ul>"
-                                                    "<li>" + count + "</li>" +
-                                                    "<li>" + param.discription + "</li>" +
-                                                    "<li><button>delete</button><li>"
-                                                "</ul>"
+                        console.log(count);
+                        var theHeading = "<div class='headerDis'>" +
+                                                "<ul>" +
+                                                    "<li class='" + param.identity + "' onclick='hideOrDisplayProperty(this)'>" + count + "</li>" +
+                                                    "<li class='" + param.identity + "' onclick='hideOrDisplayProperty(this)'>" + param.discription + "</li>" +
+                                                    "<li><button onclick='deleteDisProperty(this.class)' class='" + param.identity + "'>delete</button><li>" +
+                                                "</ul>" +
                                          "</div>";
 
-                        var someHtml = "<div>" +
+                        var someHtml = "<div class='propertyContent' id='" + param.identity + "'>" +
                                             "<p class='pHead'>Property Discription</p>" +
                                             "<p class='subDiv'>"  + param.discription + "</p>" +
                                             "<p class='pHead'>Caption</p>" +
                                             "<p class='subDiv'>"  + param.caption + "</p>" +
                                             "<p class='pHead'>Owners Name</p>" +
-                                            "<p class='subDiv'>"  + param.owner +  "</p>"
+                                            "<p class='subDiv'>"  + param.owner +  "</p>" +
                                             "<p class='pHead'>State of Property location</p>" +
                                             "<p class='subDiv'>" + param.state + "</p>" +
                                             "<p class='pHead'>Local Government of Property Location</p>" +
@@ -250,26 +288,6 @@
 
         listProperties();
 
-        function deleteProperty(gottenValue){
-            var theToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-            var theData = { "message": gottenValue, "token": theToken }
-            var xhttp = new XMLHttpRequest();
-            xhttp.open("POST", "/deleteProperty", true);
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    data = this.responseText;
-                    console.log(this.responseText);
-                }
-            };
-
-            xhttp.setRequestHeader('X-CSRF-TOKEN', theToken);
-            xhttp.setRequestHeader("X-Requested-With", 'XMLHttpRequest');
-            xhttp.setRequestHeader("processData", 'false');
-            xhttp.setRequestHeader('cache', 'false');
-            xhttp.setRequestHeader("ContentType", "false");
-            xhttp.send(theData);
-
-        }
     </script>
     </body>
 </html>

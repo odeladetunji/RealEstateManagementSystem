@@ -293,4 +293,56 @@
 	margin-left: 5%;
 }
 
+.headerDis ul li {
+	display: inline-block;
+	color: white;
+	background-color: black;
+	cursor: pointer;
+}
+
+.headerDis ul li:nth-child(1) {
+	width: 10%;
+	padding: 10px 2px;
+	text-align: center;
+}
+
+.headerDis ul li:nth-child(2){
+	width: 70%;
+	padding: 10px 2px;
+	text-align: center;
+}
+
+.headerDis ul li:nth-child(3) {
+	width: 20%;
+	padding: 10px 2px;
+	text-align: center;
+}
+.headerDis ul {
+	width: 100%;
+	background-color: black;
+	margin-bottom: 0px;
+}
+
+.subDiv, .pHead {
+	padding: 10px 20px;
+}
+
+.subDiv {
+	color: purple;
+	border-bottom: 1px solid black;
+}
+
+.pHead {
+	font-weight: bold;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+.propertyContent {
+	padding-top: 30px;
+	border: 2px solid white;
+	padding-left: 20px;
+	padding-right: 40px;
+}
+
 
