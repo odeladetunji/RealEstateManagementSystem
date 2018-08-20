@@ -48,6 +48,10 @@
                             <p>Available Properties</p>
                         </li>
                     </ul>
+
+                    <div class="genProperties">
+                        <p id="pTag"></p>
+                    </div>
                     
                     <p id="successMessage">Property Has Been Listed Successfully!</p>
                     <h4 id="thisH4">Please fill the form below to list your property on the platform</h4>

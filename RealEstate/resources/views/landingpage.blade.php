@@ -17,32 +17,32 @@
         </style>
     </head>
     <body>
-         <div>
-              <div class="header">
-                   <ul>
-                      <li>signup</li>
-                      <li>Login</li>
-                   </ul>
-              </div>
-              <div class="body">
-                    <div class="banner">
-                         <div style="display: flex;">
-                              <div>
-                                   <input type="" name="search" placeholder="Search Property For Lease or Sale">
-                              </div>
-                              <div>
-                                  <button>submit</button>
-                              </div>
-                         </div>
-                    </div>
-                    <div class="mainBody">
-                        
-                    </div>
-              </div>
-              <div class="footer">
-                   <p>Designed And Written By Olatunji Odelade</p>
-              </div>
-         </div>
+        
+          <div class="header">
+               <ul>
+                  <li>signup</li>
+                  <li>Login</li>
+               </ul>
+          </div>
+          <div class="parentBody">
+                <div class="banner">
+                     <div style="display: flex; width: 100%; flex-direction: row;" class="forBanner">
+                          <div id="searchBox">
+                               <input type="" name="search" placeholder="Search Property For Lease or Sale">
+                          </div>
+                          <div id="submitSearch">
+                              <button>submit</button>
+                          </div>
+                     </div>
+                </div>
+                <div class="mainBody">
+                    
+                </div>
+          </div>
+          <div class="footer">
+               <p>Designed And Written By Olatunji Odelade</p>
+          </div>
+    
               
         <script>  
             $(document).ready(function(event){
