@@ -102,3 +102,23 @@
 .banner {
 	width: 100%;
 }
+
+.coverForObjects {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	border-top: 1px solid black;
+}
+
+.propertyCover {
+	width: 350px;
+	margin-left: 4%;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.propertyCover p {
+	background-color: white;
+}
+

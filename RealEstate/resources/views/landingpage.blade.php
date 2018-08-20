@@ -55,16 +55,14 @@
                     xhttp.onreadystatechange = function () {
                         if (this.readyState == 4 && this.status == 200) {
                             data = JSON.parse(this.responseText).data; // this is an array!
-                            console.log(data);
-
                             function showProperties(){
-                                var someDiv = "<div class='coverForObjects'>" + theObjects + "</div>";
+                                var someDiv = "<div class='coverForObjects' style='display: flex;'>" + theObjects + "</div>";
                                 $(someDiv).insertBefore('#pTag');
                                 console.log('Finished Displaying Contents');
                             }
 
                             function useData(param, count){
-                                var pictureSection = "<div class="imageDiv" style='background-image: url('/public/" + param.picture + "')'></div>";
+                                var pictureSection = "<div class='imageDiv' style='background-image: url(/public/images/" + param.firstpicture + ")'></div>";
 
                                 var body = "<div>" +
                                                 "<p>" + param.caption + "</p>" +
@@ -87,7 +85,7 @@
                                 if (count == data.length) {
                                     setTimeout(function(){
                                        showProperties();
-                                    }, 50);
+                                    }, 15);
                                     break;
                                 }
                             }
