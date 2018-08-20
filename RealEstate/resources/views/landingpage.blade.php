@@ -36,7 +36,7 @@
                      </div>
                 </div>
                 <div class="mainBody">
-                    
+                    <p id="pTag"></p>
                 </div>
           </div>
           <div class="footer">
@@ -47,8 +47,9 @@
         <script>  
             $(document).ready(function(event){
                   function listProperties(){
+                    var theObjects;
+                    var arrayObject = [];
                     var theToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-                    
                     var xhttp = new XMLHttpRequest();
                     xhttp.open("GET", "/listAllProperties", true);
                     xhttp.onreadystatechange = function () {
@@ -57,12 +58,28 @@
                             console.log(data);
 
                             function showProperties(){
-
+                                var someDiv = "<div class='coverForObjects'>" + theObjects + "</div>";
+                                $(someDiv).insertBefore('#pTag');
+                                console.log('Finished Displaying Contents');
                             }
 
                             function useData(param, count){
+                                var pictureSection = "<div class="imageDiv" style='background-image: url('/public/" + param.picture + "')'></div>";
 
+                                var body = "<div>" +
+                                                "<p>" + param.caption + "</p>" +
+                                                "<p>" + param.location + "</p>" +
+                                                "<p>" + param.discription + "</p>" +
+                                                "<p>" + param.price + "</p>" +
+                                           "</div>";
+
+                                var totalHTML = '<div class="propertyCover">' + pictureSection + body + '</div>';
+                                //arrayObject.push(totalHTML);
+                                if (count == 1) { theObjects = totalHTML;}
+                                theObjects = theObjects + totalHTML;
+                                //$(totalHTML).insertBefore('#pTag');
                             }
+
                             var count = 0;
                             for(var i=0; i<=data.length; i++){
                                 count++;
