@@ -56,11 +56,15 @@
 	width: 100%;
 	height: 350px;
 	padding-bottom: 150px;
+	background-image: url('/storage/images/368808customerCarePicture4.jpg');
+	background-size: cover;
+	background-position: center;
 }
 
 .forBanner {
 	width: 100%;
 	padding-top: 200px;
+	background-color: transparent;
 	/*padding-bottom: 150px;*/
 }
 
@@ -93,6 +97,7 @@
 
 #submitSearch {
 	width: 20%;
+	background-color: transparent;
 }
 
 .parentBody {
@@ -118,11 +123,13 @@
 	margin-bottom: 40px;
 	border-radius: 5px;
 	border-bottom: 40px solid silver;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .propertyCover:hover{
 	border: 1px solid black;
 	border-radius: 5px;
+	border-bottom: 40px solid black;
 }
 
 .propertyCover p {

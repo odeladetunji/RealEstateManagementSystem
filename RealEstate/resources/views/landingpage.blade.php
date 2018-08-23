@@ -60,7 +60,7 @@
                             }
 
                             function useData(param, count){
-                                var pictureSection = "<div class='imageDiv' style='background-image: url({{URL::asset('storage/" + param.firstpicture + "')}})'></div>";
+                                var pictureSection = "<div class='imageDiv' style='background-image: url(/storage/images/" + param.firstpicture + ")'></div>";
 
                                 var body = "<div>" +
                                                 "<p>" + param.caption + "</p>" +
