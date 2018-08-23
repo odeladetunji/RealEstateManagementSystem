@@ -17,15 +17,15 @@
         </style>
     </head>
     <body>
-          <div class="row mainDiv">
-               <div class="col-sm-3">
+          <div class="" style="display: flex;">
+               <div class="leftNav">
                    <ul>
                        <li>home</li>
                        <li onclick="displayForm()">list Property</li>
                        <li>View listed properties</li>
                    </ul>
                </div>
-               <div class="col-sm-9">  
+               <div class="theBody">  
                     <p id="subHeading">Welcome <span id="subHeadingSpan"></span></p>
                     <ul class="tabs">
                         <li>
@@ -144,26 +144,7 @@
                         xhttp.send(formData);
                     }
 
-                    checkingIfPasswordExits();
-
-                 
-    //var data = new FormData(property);
-    /*$.ajax({
-        url: 'http://127.0.0.1:8000/listPropertyLandLord',
-        type: 'POST',
-        data: data,
-        cache: false,
-        processData: false,
-        contentType : false,
-        success: function (data) {
-            console.log(data);
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log(jqXHR, textStatus, errorThrown);
-        }
-    })*/
-
-             
+                    checkingIfPasswordExits();  
               }) 
         });  
         
@@ -218,7 +199,6 @@
         function listProperties(){
             var theToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
             var message = document.getElementById('thisIdentity').innerHTML;
-            
             var theData = { "message": message, "token": theToken }
             var xhttp = new XMLHttpRequest();
             xhttp.open("POST", "/listAllProperties", true);
@@ -226,7 +206,6 @@
                 if (this.readyState == 4 && this.status == 200) {
                     data = JSON.parse(this.responseText).data; // this is an array!
                     console.log(data);
-
                     function useData(param, count){
                         console.log(count);
                         var theHeading = "<div class='headerDis'>" +
@@ -262,7 +241,7 @@
                                             "<p class='subDiv'>" + param.price + "</p>" +
                                        "</div>";
 
-                         var finalHTML = "<div>" + theHeading + someHtml + "</div>";
+                         var finalHTML = "<div class='theProps'>" + theHeading + someHtml + "</div>";
 
                          $(finalHTML).insertBefore('#pTag');
                     }

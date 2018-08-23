@@ -166,6 +166,11 @@
 	width: 100%;
 }
 
+.theBody {
+    width: 80%;
+    margin-left: 20%;
+}
+
 .tabs li {
 	width: 25%;
 	background-color: green;
@@ -330,13 +335,52 @@
 .subDiv {
 	color: purple;
 	border-bottom: 1px solid black;
+	width: 95%;
+	margin-left: 2.5%;
 }
 
 .pHead {
 	font-weight: bold;
 	margin-bottom: 0px;
 	padding-bottom: 0px;
+	width: 95%;
+	margin-left: 2.5%;
 }
 
+.leftNav {
+	background-color: black;
+	height: 750px;
+	width: 20%;
+	position: fixed;
+}
 
+.leftNav ul li {
+	background-color: black;
+	color: white;
+	list-style-type: none;
+	padding-left: 20px;
+	padding: 20px;
+	border-bottom: 1px solid green;
+}
 
+.leftNav ul li:hover {
+    color: pink;
+    cursor: pointer;
+}
+
+.leftNav ul {
+	margin-top: 80px;
+}
+
+.genProperties {
+	width: 90%;
+	margin-left: 5%;
+}
+
+.theProps {
+	margin-bottom: 2px;
+}
+.propertyContent {
+	border: 2px solid white;
+	margin-top: 5px;
+}

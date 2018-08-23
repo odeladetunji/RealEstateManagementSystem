@@ -42,8 +42,6 @@
           <div class="footer">
                <p>Designed And Written By Olatunji Odelade</p>
           </div>
-    
-              
         <script>  
             $(document).ready(function(event){
                   function listProperties(){
@@ -62,13 +60,14 @@
                             }
 
                             function useData(param, count){
-                                var pictureSection = "<div class='imageDiv' style='background-image: url(/public/images/" + param.firstpicture + ")'></div>";
+                                var pictureSection = "<div class='imageDiv' style='background-image: url({{URL::asset('storage/" + param.firstpicture + "')}})'></div>";
 
                                 var body = "<div>" +
                                                 "<p>" + param.caption + "</p>" +
                                                 "<p>" + param.location + "</p>" +
                                                 "<p>" + param.discription + "</p>" +
                                                 "<p>" + param.price + "</p>" +
+                                                "<p>more</p>" +
                                            "</div>";
 
                                 var totalHTML = '<div class="propertyCover">' + pictureSection + body + '</div>';
