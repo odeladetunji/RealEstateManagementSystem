@@ -13,15 +13,15 @@
         <script src="/js/jquery-3.2.1.min(first).js" type='text/JavaScript'></script>
         <!-- Styles -->
         <style>
-              
+
         </style>
     </head>
     <body>
-        
           <div class="header">
                <ul>
                   <li>signup</li>
                   <li>Login</li>
+                  <li onclick="returnFullPage()">home</li>
                </ul>
           </div>
           <div class="parentBody">
@@ -39,10 +39,28 @@
                     <p id="pTag"></p>
                 </div>
           </div>
+          <div style="display: flex;">
+              <div class="firstSegment">
+                    <div id="firstImage"></div>
+                    <div id="secondImage"></div>
+                    <div id="thirdImage"></div>
+                    <div id="fouthImage"></div>
+              </div>
+              <div class="secondSegment">
+                   <p></p>
+                   <p></p>
+                   <p></p>
+                   <p></p>
+                   <p></p>
+                   <p></p>
+                   <p></p>
+              </div>
+          </div>
           <div class="footer">
                <p>Designed And Written By Olatunji Odelade</p>
           </div>
         <script>  
+            var dataContainer;
             $(document).ready(function(event){
                   function listProperties(){
                     var theObjects;
@@ -53,6 +71,8 @@
                     xhttp.onreadystatechange = function () {
                         if (this.readyState == 4 && this.status == 200) {
                             data = JSON.parse(this.responseText).data; // this is an array!
+                            console.log(data);
+                            dataContainer = data;
                             function showProperties(){
                                 var someDiv = "<div class='coverForObjects' style='display: flex;'>" + theObjects + "</div>";
                                 $(someDiv).insertBefore('#pTag');
@@ -60,7 +80,7 @@
                             }
 
                             function useData(param, count){
-                                var pictureSection = "<div class='imageDiv' style='background-image: url(/storage/images/" + param.firstpicture + ")'></div>";
+                                var pictureSection = "<div class='imageDiv' style='background-image: url(/storage/images/" + param.firstpicture + ")' onclick='fullPropertyDiscription(this)'></div>";
 
                                 var body = "<div>" +
                                                 "<p>" + param.caption + "</p>" +
@@ -101,6 +121,40 @@
 
                   listProperties();
             });  
+
+            function fullPropertyDiscription(param){
+                 var theData = param.style.backgroundImage.split('/')[3].split('"')[0];
+                 console.log(theData);
+
+                 function setTheImage(parameter){
+                      var firstImage = document.getElementById('firstImage');
+                      firstImage.style.backgroundImage = 'url(/storage/images/' + theData + ")";
+                 }
+
+                 function setOtherImages(value, value2){
+                      var thisDiv = document.getElementById(value2);
+                      thisDiv.style.backgroundImage = 'url(/storage/images/' + value + ")";
+                      document.getElementsByClassName('firstSegment')[0].style.display = 'block';
+                      document.getElementsByClassName('secondSegment')[0].style.display = 'block';
+                      document.getElementsByClassName('parentBody')[0].style.display = 'none';
+                 }
+
+                 dataContainer.map(function(data){
+                     if (data.firstpicture == theData) {
+                         setTheImage(data);
+                         setOtherImages(data.secondpicture, "secondImage");
+                         setOtherImages(data.thirdpicture, "thirdImage");
+                         setOtherImages(data.fouthpicture, "fouthImage");
+                     }
+                 });
+            }
+
+            function returnFullPage(){
+                  $('.firstSegment').hide();
+                  $('.secondSegment').hide();
+                  $('.parentBody').show();
+            }
+
         </script>
     </body>
 </html>

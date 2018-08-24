@@ -4,7 +4,7 @@
 	background-color: #fafafa;
 	font-family: vadana;
 	border: box-border;
- }
+}
 
 .header {
 	width: 100%;
@@ -19,6 +19,7 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding-right: 10px;
+	cursor: pointer;
 }
 
 .header ul li {
@@ -32,10 +33,16 @@
 	border-radius: 5px;
 	border: none;
 	float: right;
+	cursor: pointer;
+}
+
+.header ul li:nth-child(2) {
+	margin-right: 15px;
 }
 
 .header ul li:last-child {
 	margin-right: 15px;
+	cursor: pointer;
 }
 
 .footer {
@@ -141,4 +148,61 @@
 	height: 250px;
 	background-size: cover;
 	background-position: center;
+}
+
+.firstSegment {
+	width: 70%;
+	position: relative;
+	display: none;
+}
+
+.secondSegment {
+	width: 30%;
+	height: 1000px;
+	border-left: 1px solid black;
+	display: none;
+}
+
+#firstImage {
+    width: 45%;
+    height: 400px;
+    position: absolute;
+    top: 50px;
+    left: 3%; 
+    background-position: center;
+    background-size: cover;
+}
+
+#secondImage {
+    width: 45%;
+    height: 400px;
+    position: absolute;
+    top: 50px;
+    left: 52%;
+    background-position: center;
+    background-size: cover;
+}
+
+#thirdImage {
+    width: 45%;
+    height: 400px;
+    position: absolute;
+    top: 500px;
+    left: 3%;
+    background-position: center;
+    background-size: cover;
+}
+
+#fouthImage {
+    width: 45%;
+    height: 400px;
+    position: absolute;
+    top: 500px;
+    left: 52%;
+    background-position: center;
+    background-size: cover;
+}
+
+#modal {
+	display: none;
 }
