@@ -179,11 +179,49 @@
 
             searchAlgorithm();
             
+var pronouns = [
+'all', 'another', 'any', 'anybody', 'anyone', 'anything', 'as', 'both', 'each', 'either', 'everybody',
+'everyone', 'everything', 'few', 'he', 'her', 'hers', 'herself', 'him', 'himself', 'his', 'I', 'it', 'its', 'itself', 'many', 'me', 'mine', 'most', 'my', 'myself', 'neither', 'no one', 'nobody', 'none',
+'nothing', 'one', 'other', 'others', 'our', 'ours', 'ourselves', 'several', 'she', 'some', 'somebody', 'someone', 'something', 'such', 'that', 'thee', 'their', 'theirs', 'them', 'themselves', 'these', 'they', 'thine', 'this', 'those', 'thou', 'thy', 'us', 'we','what', 'whatever', 'which', 'whichever', 'who', 'whoever', 'whom', 'whomever', 'went', 'would', 'whose', 'ye', 'you', 'your', 'yours', 'yourself','yourselves',
+'in', 'of', 'you', 'i', 'off', 'on', 'by', 'come'
+];
+
             function showHint(parameter){
                  var value = parameter.value; // use for the searching!
-
+                    
                  function checkObject(param){
-                      
+                      function actualObject(actualObject, searchValue){
+                          for(x in actualObject){
+                              if (actualObject[x] == searchValue) {
+                                
+                              }
+                          }
+                      }
+
+                      function loopObject(gottenValue, searchValue){
+                          dataBase.map(function(element){
+                               actualObject(element, searchValue);
+                          })
+                      }
+
+                      var data = value.split(' ');
+                      for(var i=0; i<=data.length; i++){
+                         counter++;
+                         var searchValue = data[i];
+                         if (pronouns.indexOf(data[i]) >= 0) {
+                             loopObject(data[i], searchValue);
+                         }
+
+                         if (pronouns.indexOf(data[i]) < 0) {
+                              continue;
+                         }
+
+                         if (data.length == counter) {
+                            break;
+                         }
+
+
+                      }
                  }
 
                  dataBase.map(function(element){
