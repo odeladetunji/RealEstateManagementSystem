@@ -39,6 +39,8 @@ Route::post('/checkIfPasswordAvailable', 'PasswordAvailabilityController@passwor
 Route::get('/landingpage', 'LandingPageController@landingpage');
 Route::get('/listAllProperties', 'ListAllPropertiesUsingGetController@listAllProperties');
 Route::get('/registrationInterface', 'RegistrationInterfaceController@interface');
+Route::get('/searchAlgorithm', 'SearchAlgorithmController@queryDataBase');
 Route::get('/returnInterfacePage', ['as'=>'theInterface', function(){
 	return view('interface');
 }]);
+

@@ -28,7 +28,7 @@
                 <div class="banner">
                      <div style="display: flex; width: 100%; flex-direction: row;" class="forBanner">
                           <div id="searchBox">
-                               <input type="" name="search" placeholder="Search Property For Lease or Sale">
+                               <input type="" name="search" placeholder="Search Property For Lease or Sale" onkeyup="showHint(this)">
                           </div>
                           <div id="submitSearch">
                               <button>submit</button>
@@ -153,6 +153,42 @@
                   $('.firstSegment').hide();
                   $('.secondSegment').hide();
                   $('.parentBody').show();
+            }
+            
+            var dataBase;
+            function searchAlgorithm(){
+                var theToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                var xhttp = new XMLHttpRequest();
+                xhttp.open('GET', '/searchAlgorithm', true);
+
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        data = JSON.parse(this.responseText).data; // this is an array!
+                        dataBase = data;
+                        console.log(dataBase);
+                    }
+                }
+
+                xhttp.setRequestHeader('X-CSRF-TOKEN', theToken);
+                xhttp.setRequestHeader("X-Requested-With", 'XMLHttpRequest');
+                xhttp.setRequestHeader("processData", 'false');
+                xhttp.setRequestHeader('cache', 'false');
+                xhttp.setRequestHeader("Content-Type", "application/json");
+                xhttp.send();
+            }
+
+            searchAlgorithm();
+            
+            function showHint(parameter){
+                 var value = parameter.value; // use for the searching!
+
+                 function checkObject(param){
+                      
+                 }
+
+                 dataBase.map(function(element){
+                      checkObject(element);
+                 })
             }
 
         </script>

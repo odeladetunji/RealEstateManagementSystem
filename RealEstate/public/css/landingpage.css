@@ -165,7 +165,7 @@
 
 #firstImage {
     width: 45%;
-    height: 400px;
+    height: 350px;
     position: absolute;
     top: 50px;
     left: 3%; 
@@ -175,7 +175,7 @@
 
 #secondImage {
     width: 45%;
-    height: 400px;
+    height: 350px;
     position: absolute;
     top: 50px;
     left: 52%;
@@ -185,9 +185,9 @@
 
 #thirdImage {
     width: 45%;
-    height: 400px;
+    height: 350px;
     position: absolute;
-    top: 500px;
+    top: 450px;
     left: 3%;
     background-position: center;
     background-size: cover;
@@ -195,9 +195,9 @@
 
 #fouthImage {
     width: 45%;
-    height: 400px;
+    height: 350px;
     position: absolute;
-    top: 500px;
+    top: 450px;
     left: 52%;
     background-position: center;
     background-size: cover;
