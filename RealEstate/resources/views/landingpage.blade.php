@@ -30,6 +30,46 @@
                           <div id="searchBox">
                                <input type="" name="search" placeholder="Search Property For Lease or Sale" onkeyup="showHint(this)">
                           </div>
+                          <div>
+                               <select name="country" id="select">
+                                     <option value="Location">Location</option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                                     <option value=""></option>
+                               </select>
+                          </div>
                           <div id="submitSearch">
                               <button>submit</button>
                           </div>
@@ -188,12 +228,43 @@ var pronouns = [
 
             function showHint(parameter){
                  var value = parameter.value; // use for the searching!
-                    
+                 var location = document.getElementById('select').value;
+                 var foundProperties = [];
+                 var propertyContainer = 0;
+
+                 function showTheFinalHint(){
+                      $(propertyContainer).insertBefore('#');
+                 }
+
+                 function showFoundProperties(){
+                      var count = 0;
+                      foundProperties.map(function(elements){
+                            count++;
+                            var content = "<div class='cov' style='display: flex;'>" +
+                                              "<div class='thePictures' style='background-image: url(/storage/images/" + elements.firstpicture + ")'></div>" +
+                                              "<div class='theDiscription'>" +
+                                                   "<p>" + elements.caption + "</p>" +
+                                                   "<p>" + elements.location + "</p>" +
+                                                   "<p>" + elements.phonenumber + "</p>" +
+                                                   "<p>" + elements.price + "</p>" +
+                                                   "<p>" + elements.availability + "</p>" +
+                                              "</div>" +
+                                          "</div>";
+
+                                          propertyContainer = propertyContainer + content;
+                                          if (count == 1) {
+                                                setTimeout(function(){
+                                                   showTheFinalHint();
+                                                }, 10);
+                                          }
+                      });
+                 }
+
                  function checkObject(param){
                       function actualObject(actualObject, searchValue){
                           for(x in actualObject){
-                              if (actualObject[x] == searchValue) {
-                                
+                              if (actualObject[x] == searchValue && actualObject['location'] == location) {
+                                    foundProperties.push(actualObject);
                               }
                           }
                       }
@@ -217,6 +288,9 @@ var pronouns = [
                          }
 
                          if (data.length == counter) {
+                            setTimeout(function(){ // this is to wait for other loop to finish there execution!
+                                showFoundProperties();
+                            }, 10);
                             break;
                          }
 
