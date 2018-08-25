@@ -94,13 +94,26 @@
 }
 
 #searchBox {
-	width: 80%;
+	width: 70%;
     margin-left: 10%;
 }
 
 #searchBox input {
    width: 95%;
 }
+
+#country {
+	width: 10%;
+}
+#select {
+	width: 100%;
+	height: 60px;
+	font-size: 16px;
+	background-color: white;
+	border: 1px solid green;
+	border-radius: none;
+}
+
 
 #submitSearch {
 	width: 20%;

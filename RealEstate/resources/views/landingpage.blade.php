@@ -19,8 +19,8 @@
     <body>
           <div class="header">
                <ul>
-                  <li>signup</li>
-                  <li>Login</li>
+                  <li onclick="gotoSignUp()">signup</li>
+                  <li onclick="gotoLogin()">Login</li>
                   <li onclick="returnFullPage()">home</li>
                </ul>
           </div>
@@ -30,10 +30,10 @@
                           <div id="searchBox">
                                <input type="" name="search" placeholder="Search Property For Lease or Sale" onkeyup="showHint(this)">
                           </div>
-                          <div>
+                          <div id="country">
                                <select name="country" id="select">
                                      <option value="Location">Location</option>
-                                     <option value=""></option>
+                                     <option value="Abia">Abia</option>
                                      <option value=""></option>
                                      <option value=""></option>
                                      <option value=""></option>
@@ -266,7 +266,7 @@
                                                    showTheFinalHint();
                                                 }, 10);
                                           }
-                      });
+                    });
                  }
 
                  function checkObject(param){
@@ -302,14 +302,20 @@
                             }, 10);
                             break;
                          }
-
-
                       }
                  }
 
                  dataBase.map(function(element){
                       checkObject(element);
                  })
+            }
+
+            function gotoSignUp(){
+                window.location = '/adminpage';
+            }
+
+            function gotoLogin(){
+                window.location = '';
             }
 
         </script>
