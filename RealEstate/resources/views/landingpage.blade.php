@@ -74,6 +74,9 @@
                               <button>submit</button>
                           </div>
                      </div>
+                     <div id="searchDiv">
+                          <p id="searchHintTag"></p>
+                     </div>
                 </div>
                 <div class="mainBody">
                     <p id="pTag"></p>
@@ -222,6 +225,9 @@
             }
             
             function showHint(parameter){
+                 document.getElementById('searchDiv').innerHTML = '';
+                 var pElement = "<p id='searchHintTag'></p>";
+                 document.getElementById('searchDiv').innerHTML = pElement;
                  // pronouns are excluded from the search, only key words are used!
                  var pronouns = [
                     'all', 'another', 'any', 'anybody', 'anyone', 'anything', 'as', 'both', 
@@ -241,10 +247,10 @@
                  var value = parameter.value; // use for the searching!
                  var location = document.getElementById('select').value;
                  var foundProperties = [];
-                 var propertyContainer = 0;
+                 var propertyContainer = "<div>";
 
                  function showTheFinalHint(){
-                      $(propertyContainer).insertBefore('#');
+                      $(propertyContainer).insertBefore('#searchHintTag');
                  }
 
                  function showFoundProperties(){
@@ -263,10 +269,13 @@
                                           "</div>";
 
                                           propertyContainer = propertyContainer + content;
-                                          if (count == 1) {
-                                                setTimeout(function(){
+                                          if (count == foundProperties.length) {
+                                                //setTimeout(function(){
+                                                   propertyContainer = propertyContainer + "</div>";
+                                                   //console.log(count);
                                                    showTheFinalHint();
-                                                }, 10);
+                                                   return;
+                                               // }, 10);
                                           }
                     });
                  }
@@ -302,20 +311,25 @@
 
                          if (data.length == counter) {
                               break;
-                               
-                              setTimeout(function(){ // this is to wait for other loop to finish there execution!
-                                if (marchFound == "True") {
-                                  showFoundProperties();
-                                }
-                              }, 10);
-                                  
-                               
                          }
                       }
                  }
-
+                 
+                 var countDataBase = 0;
                  dataBase.map(function(element){
-                      checkObject(element);
+                      countDataBase++;
+                       if (dataBase.length == countDataBase) {
+                              setTimeout(function(){ // this is to wait for other loop to finish there execution!
+                                //console.log(";;;;;;;;;;;;;;;;;");
+                                if (marchFound == "True") {
+                                  showFoundProperties();
+                                  console.log(foundProperties);
+                                }
+                              }, 10);
+
+                       }
+
+                       checkObject(element);
                  })
             }
 
