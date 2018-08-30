@@ -34,7 +34,7 @@
                                <select name="country" id="select">
                                      <option value="Location">Location</option>
                                      <option value="Abia">Abia</option>
-                                     <option value=""></option>
+                                     <option value="Osun State">Osun State</option>
                                      <option value=""></option>
                                      <option value=""></option>
                                      <option value=""></option>
@@ -101,6 +101,8 @@
           </div>
         <script>  
             var dataContainer;
+            var dataBase;
+            
             $(document).ready(function(event){
                   function listProperties(){
                     var theObjects;
@@ -160,6 +162,30 @@
                   }
 
                   listProperties();
+
+                  function searchAlgorithm(){
+                        var theToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.open('GET', '/searchAlgorithm', true);
+
+                        xhttp.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
+                                data = JSON.parse(this.responseText).data; // this is an array!
+                                dataBase = data;
+                                console.log(dataBase);
+                            }
+                        }
+
+                        xhttp.setRequestHeader('X-CSRF-TOKEN', theToken);
+                        xhttp.setRequestHeader("X-Requested-With", 'XMLHttpRequest');
+                        xhttp.setRequestHeader("processData", 'false');
+                        xhttp.setRequestHeader('cache', 'false');
+                        xhttp.setRequestHeader("Content-Type", "application/json");
+                        xhttp.send();
+                 }
+
+                 searchAlgorithm();
+
             });  
 
             function fullPropertyDiscription(param){
@@ -195,30 +221,6 @@
                   $('.parentBody').show();
             }
             
-            var dataBase;
-            function searchAlgorithm(){
-                var theToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-                var xhttp = new XMLHttpRequest();
-                xhttp.open('GET', '/searchAlgorithm', true);
-
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        data = JSON.parse(this.responseText).data; // this is an array!
-                        dataBase = data;
-                        console.log(dataBase);
-                    }
-                }
-
-                xhttp.setRequestHeader('X-CSRF-TOKEN', theToken);
-                xhttp.setRequestHeader("X-Requested-With", 'XMLHttpRequest');
-                xhttp.setRequestHeader("processData", 'false');
-                xhttp.setRequestHeader('cache', 'false');
-                xhttp.setRequestHeader("Content-Type", "application/json");
-                xhttp.send();
-            }
-
-            searchAlgorithm();
-
             function showHint(parameter){
                  // pronouns are excluded from the search, only key words are used!
                  var pronouns = [
@@ -268,39 +270,46 @@
                                           }
                     });
                  }
-
+                 
+                 var marchFound;
                  function checkObject(param){
-                      function actualObject(actualObject, searchValue){
-                          for(x in actualObject){
-                              if (actualObject[x] == searchValue && actualObject['location'] == location) {
-                                    foundProperties.push(actualObject);
+                      function loopObject(searchValue){
+                          console.log('something');
+                          console.log(location);
+                          console.log(param);
+                          console.log(searchValue);
+                          for(x in param){
+                              if (param[x] == searchValue && param['state'] == location) {
+                                    foundProperties.push(param);
+                                    console.log('it got here');
+                                    marchFound = "True";
+                                    //console.log(foundProperties);
                               }
                           }
                       }
 
-                      function loopObject(gottenValue, searchValue){
-                          dataBase.map(function(element){
-                               actualObject(element, searchValue);
-                          })
-                      }
-
-                      var data = value.split(' ');
+                      var data = value.split(" ");
+                      var counter = 0;
                       for(var i=0; i<=data.length; i++){
                          counter++;
-                         var searchValue = data[i];
-                         if (pronouns.indexOf(data[i]) >= 0) {
-                             loopObject(data[i], searchValue);
+                         if (pronouns.indexOf(data[i]) < 0) {
+                             loopObject(data[i]);
                          }
 
-                         if (pronouns.indexOf(data[i]) < 0) {
+                         if (pronouns.indexOf(data[i]) >= 0) {
                               continue;
                          }
 
                          if (data.length == counter) {
-                            setTimeout(function(){ // this is to wait for other loop to finish there execution!
-                                showFoundProperties();
-                            }, 10);
-                            break;
+                              break;
+                               
+                              setTimeout(function(){ // this is to wait for other loop to finish there execution!
+                                if (marchFound == "True") {
+                                  showFoundProperties();
+                                }
+                              }, 10);
+                                  
+                               
                          }
                       }
                  }
