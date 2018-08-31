@@ -219,3 +219,43 @@
 #modal {
 	display: none;
 }
+
+.cov {
+	width: 100%;
+	background-color: transparent;
+	margin-top: 2px;
+	border: 1px solid black;
+	z-index: 3;
+}
+
+.thePictures {
+	width: 150px;
+	height: 100px;
+	background-size: cover;
+	background-position: center;
+	background-color: transparent;
+    z-index: 3;
+}
+
+.theDiscription {
+	padding-left: 30px;
+	padding-top: 10px;
+	width: 900px;
+	z-index: 3;
+}
+
+.theDiscription p {
+	padding: 5px;
+	z-index: 3;
+}
+
+.finalCover {
+	background-color: transparent;
+    width: 80%;
+    margin-left: 10%;
+    z-index: 3;
+}
+
+#searchDiv {
+	background-color: transparent;
+}

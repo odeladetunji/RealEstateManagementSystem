@@ -247,7 +247,7 @@
                  var value = parameter.value; // use for the searching!
                  var location = document.getElementById('select').value;
                  var foundProperties = [];
-                 var propertyContainer = "<div>";
+                 var propertyContainer = "<div class='finalCover'>";
 
                  function showTheFinalHint(){
                       $(propertyContainer).insertBefore('#searchHintTag');
@@ -262,9 +262,7 @@
                                               "<div class='theDiscription'>" +
                                                    "<p>" + elements.caption + "</p>" +
                                                    "<p>" + elements.location + "</p>" +
-                                                   "<p>" + elements.phonenumber + "</p>" +
                                                    "<p>" + elements.price + "</p>" +
-                                                   "<p>" + elements.availability + "</p>" +
                                               "</div>" +
                                           "</div>";
 
@@ -288,12 +286,16 @@
                           console.log(param);
                           console.log(searchValue);
                           for(x in param){
-                              if (param[x] == searchValue && param['state'] == location) {
-                                    foundProperties.push(param);
-                                    console.log('it got here');
-                                    marchFound = "True";
-                                    //console.log(foundProperties);
-                              }
+                                    if (typeof param[x] == "number") {
+                                          console.log('Its a number');
+                                          continue;
+                                    }
+
+                                    if (param[x].toLowerCase() == searchValue.toLowerCase() && param['state'] == location) {
+                                          foundProperties.push(param);
+                                          console.log('it got here');
+                                          marchFound = "True";
+                                    }
                           }
                       }
 
