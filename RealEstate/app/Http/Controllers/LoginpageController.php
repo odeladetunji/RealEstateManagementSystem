@@ -8,10 +8,11 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class EstateManagersController extends BaseController
+class LoginpageController extends BaseController
 {
    
-    public function estateManagers(Request $request){
-         return view('estateManager');
+public function loginpage(Request $request)
+    {
+         return view('loginpage');
     }
 }

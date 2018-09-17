@@ -158,6 +158,9 @@
 
                     xhttp.setRequestHeader('X-CSRF-TOKEN', theToken);
                     xhttp.setRequestHeader("X-Requested-With", 'XMLHttpRequest');
+                    xhttp.setRequestHeader('Access-Control-Allow-Origin', true);
+                    xhttp.setRequestHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+                    xhttp.setRequestHeader("Access-Control-Allow-Headers", "Origin");
                     xhttp.setRequestHeader("processData", 'false');
                     xhttp.setRequestHeader('cache', 'false');
                     xhttp.setRequestHeader("Content-Type", "application/json");
@@ -285,6 +288,7 @@
                           console.log(location);
                           console.log(param);
                           console.log(searchValue);
+                          if (searchValue == " ") {return}
                           for(x in param){
                                     if (typeof param[x] == "number") {
                                           console.log('Its a number');
@@ -340,7 +344,7 @@
             }
 
             function gotoLogin(){
-                window.location = '';
+                window.location = '/loginpage';
             }
 
         </script>

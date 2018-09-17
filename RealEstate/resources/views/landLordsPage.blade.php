@@ -20,7 +20,7 @@
           <div class="" style="display: flex;">
                <div class="leftNav">
                    <ul>
-                       <li>home</li>
+                       <li onclick="gotoHomepage()">home</li>
                        <li onclick="displayForm()">list Property</li>
                        <li>View listed properties</li>
                    </ul>
@@ -126,12 +126,7 @@
                                 setTimeout(function(event){
                                   $('#successMessage').hide();
                                 }, 5000);
-                                var inputs = document.getElementsByTagName('input'); // an Array!
-                               /* for(var i=0; i < inputs.length; i++){
-                                    if (inputs[i].value != null || inputs[i].value != "" || inputs[i].value == typeof(String) || inputs[i].value == typeof(Number)) {
-                                      inputs[i].value = null;
-                                    }
-                                }*/
+                                var inputs = document.getElementsByTagName('input');
                             }
                         };
 
@@ -193,7 +188,6 @@
            }else{
                thisProperty.style.display = 'none';
            }
-           
         }
 
         function listProperties(){
@@ -205,6 +199,10 @@
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     data = JSON.parse(this.responseText).data; // this is an array!
+                    if (data.length == 0) {
+                        return;
+                    }
+
                     console.log(data);
                     function useData(param, count){
                         console.log(count);
@@ -266,7 +264,10 @@
         }
 
         listProperties();
-
+        
+        function gotoHomepage(){
+            window.location = '/landingpage';
+        }
     </script>
     </body>
 </html>

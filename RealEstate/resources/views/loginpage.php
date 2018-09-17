@@ -18,20 +18,21 @@
     </head>
     <body>
           <div class="nav">
-               <button>Home</button>
+               <button onclick="gotoHomepage()">Home</button>
           </div>
           <div>
-              <h1>Estate Managers</h1>
-              <p id="warningMessage">This Password is not Available</p>
+              
+              <p id="warningMessage">Password or Username not correct!</p>
+              <p id="logn">Login</p>
               <form class="landLords">
                    <input type="text" required id="username" placeholder="Enter username"><br>
                    <input type="password" required id="password" placeholder="Enter password"><br>
                    <button>submit</button>
               </form>
 
-              <form method="post" class="landLords1" style="display: none;" name="registerForm" encType="multipart/form-data" action="{{URL::to('/registerLandLord')}}" >
+              <form method="post" class="landLords1" style="display: none;" name="registerForm" encType="multipart/form-data" action="/myaccount" >
                    {{ csrf_field() }}
-                   <label for="">Sign Up</label><br>
+                   <label for="">Login</label><br>
                    <input type="text" required id="username1" name="username"><br>
                    <input type="password" required id="password1" name="password"><br>
                    <button>submit</button>
@@ -50,17 +51,22 @@
                         var theToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
                         var theData = { "username": username, "password": password, "token": theToken }
                         var xhttp = new XMLHttpRequest();
-                        xhttp.open("POST", "/checkIfPasswordAvailable", true);
+                        //console.log('ppppppppp');
+                        xhttp.open("post", "/loginuser", true);
                         xhttp.onreadystatechange = function () {
                             if (this.readyState == 4 && this.status == 200) {
                                 data = this.responseText;
                                 console.log(this.responseText);
-                                if(data == 'password is not available'){
+                                
+                                if(data == 'user does not exits'){
                                      $('#warningMessage').show();
+                                     setTimeout(function(){
+                                        document.getElementById('warningMessage').style.display = 'none';
+                                     }, 3000);
                                      return;
                                 }
 
-                                if (data == 'password is available') {
+                                if (data == 'user exits') {
                                      console.log('this condition returned true');
                                      $('.landLords1').submit();
                                      return;
@@ -68,9 +74,12 @@
                             }
                         };
 
+                        
                         xhttp.setRequestHeader('X-CSRF-TOKEN', theToken);
                         xhttp.setRequestHeader("X-Requested-With", 'XMLHttpRequest');
-                        xhttp.setRequestHeader("Content-Type", 'application/json');
+                        xhttp.setRequestHeader("processData", 'false');
+                        xhttp.setRequestHeader('cache', 'false');
+                        xhttp.setRequestHeader("Content-Type", "application/json");
                         xhttp.send(JSON.stringify(theData));
                     }
 
@@ -79,6 +88,11 @@
               });
              
         });  
+
+        function gotoHomepage(){
+              window.location = "/landingpage";
+        }
+
     </script>
     </body>
 </html>

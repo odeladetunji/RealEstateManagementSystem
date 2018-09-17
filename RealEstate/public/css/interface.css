@@ -48,3 +48,8 @@ form {
     padding: 5px;
 
 }
+
+#identity {
+	display: none;
+}
+

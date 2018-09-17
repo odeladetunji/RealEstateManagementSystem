@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,16 +27,19 @@ Route::get('/AvailablePropertiesController', 'AvailablePropertiesControllerContr
 Route::get('/viewAvailableProperties', 'ViewAvailablePropertiesController@viewAvailableProperties');
 
 Route::post('/estateManagersPage', 'EstateManagersPageController@estateManagersPage');
-Route::post('/listAllProperties', 'ListAllPropertiesController@listAllProperties');
+Route::post('/listAllProperties', 'ListAllPropertiesController@listAllProperties');//['ListAllPropertiesController@listAllProperties' => 'cors']);
+Route::post('/myaccount', 'AccountController@account');
 Route::post('/deleteProperty', 'DeletePropertyController@deleteProperty');
 Route::post('/adminlogin', 'AdminLoginController@adminPage');
 Route::post('/listPropertyLandLord', 'PropertyPostByLandlordController@property');
 Route::post('/landlordsPage', 'LandLordsPageController@landlords');
 Route::post('/registerLandLord', 'RegisterLandLordController@register');
 Route::post('/registerEstateManager', 'RegisterEstateManagerController@register');
+Route::post('/loginuser', 'LoginuserController@loginuser');
 Route::post('/checkIfPasswordAvailable', 'PasswordAvailabilityController@password');
 Route::get('/landingpage', 'LandingPageController@landingpage');
 Route::get('/listAllProperties', 'ListAllPropertiesUsingGetController@listAllProperties');
+Route::get('/loginpage', 'LoginpageController@loginpage');
 Route::get('/registrationInterface', 'RegistrationInterfaceController@interface');
 Route::get('/searchAlgorithm', 'SearchAlgorithmController@queryDataBase');
 Route::get('/returnInterfacePage', ['as'=>'theInterface', function(){

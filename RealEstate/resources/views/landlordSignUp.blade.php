@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>FootBall Profile</title>
+        <title>Real Estate</title>
         <base href="http://127.0.0.1:8000/">
 
         <link href="/CSS/landlords.css" rel="stylesheet" type="text/css">
@@ -74,7 +74,7 @@
                         xhttp.send(JSON.stringify(theData));
                     }
 
-                    checkingIfPasswordExits();
+                    checkingIfPasswordExits(); 
 
               });
              
